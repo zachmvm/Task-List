@@ -1,5 +1,5 @@
-import { Button, Dialog, TextField } from '@mui/material';
-import React, {useState} from 'react'
+import React, {useState} from 'react';
+import { Button, Dialog, DialogTitle, TextField } from '@mui/material';
 import CheckCircleIcon from '@mui/icons-material/Check';
 import axios from "axios";
 import { API_URL } from '../utils';
