@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Dialog, DialogTitle, TextField } from '@mui/material';
-import CheckCircleIcon from '@mui/icons-material/Check';
+import CheckIcon from "@mui/icons-material/Check";
 import axios from "axios";
 import { API_URL } from '../utils';
 
@@ -35,7 +35,7 @@ export const UpdateTaskForm = ({ fetchTasks, isDialogOpen, setIsDialogOpen, task
                         setIsDialogOpen(false);
                     }}
                 >
-                    <CheckCircleIcon />
+                    <CheckIcon />
                 </Button>
             </div>
         </Dialog>
