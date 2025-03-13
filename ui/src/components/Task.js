@@ -1,7 +1,7 @@
 import { Button, Checkbox, Typography } from '@mui/material';
 import React, {useState} from 'react'
-import DeleteCircleIcon from '@mui/icons-material/Delete';
-import EditCircleIcon from '@mui/icons-material/Edit';
+import DeleteIcon from "@mui/icons-material/Delete";
+import EditIcon from "@mui/icons-material/Edit";
 import { UpdateTaskForm } from './UpdateTaskForm';
 import classnames from "classnames"
 import axios from "axios";
@@ -41,8 +41,8 @@ export const Task = ({task, fetchTasks}) => {
             <Typography variant="h4">{name}</Typography>
         </div>
         <div className="taskButtons">
-            <Button variant="contained" onClick={() => setisDialogOpen(true)}> <EditCircleIcon/> </Button>
-            <Button color="error" variant="contained" onClick={handleDeleteTask}> <DeleteCircleIcon/> </Button>
+            <Button variant="contained" onClick={() => setisDialogOpen(true)}> <EditIcon/> </Button>
+            <Button color="error" variant="contained" onClick={handleDeleteTask}> <DeleteIcon/> </Button>
         </div>
         
         <UpdateTaskForm fetchTasks={fetchTasks} isDialogOpen={isDialogOpen} setisDialogOpen={setisDialogOpen} task={task}/>
