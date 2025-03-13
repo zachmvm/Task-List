@@ -24,8 +24,8 @@ export const createTasks = async ({name, completed}) => {
         Item: {
             id: uuid,
             name,
-            completed
-        }
+            completed,
+        },
     });
     const response = await docClient.send(command);
     return response;
@@ -35,7 +35,7 @@ export const updateTasks = async ({id, name, completed}) => {
     const command = new UpdateCommand({
         TableName: "Tasks",
         Key: {
-            id
+            id,
         },
         ExpressionAttributeNames: {
             "#name": "name"
@@ -45,8 +45,8 @@ export const updateTasks = async ({id, name, completed}) => {
             ":n": name,
             ":c": completed,
         },
-        ReturnValues: "ALL_NEW"
-    })
+        ReturnValues: "ALL_NEW",
+    });
     const response = await docClient.send(command);
     return response;
 };
@@ -56,8 +56,8 @@ export const deleteTasks = async (id) => {
         TableName: "Tasks",
         Key: {
             id,
-        }
-    })
+        },
+    });
     const response = await docClient.send(command);
     return response;
 };
