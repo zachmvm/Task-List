@@ -19,7 +19,7 @@ export const UpdateTaskForm = ({ fetchTasks, isDialogOpen, setIsDialogOpen, task
     };
 
     return (
-        <Dialog open={isDialogOpen} onClose={() => setIsDialogOpen(false)}>
+        <Dialog open={isDialogOpen}>
             <div className="dialog">
                 <TextField
                     size="small"
