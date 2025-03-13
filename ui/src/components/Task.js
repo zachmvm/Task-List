@@ -10,7 +10,7 @@ import { API_URL } from '../utils';
 export const Task = ({task, fetchTasks}) => {
     const {id, name, completed} = task;
     const [isComplete, setIsComplete] = useState(completed);
-    const [isDialogueOpen, setisDialogueOpen] = useState(false);
+    const [isDialogOpen, setisDialogOpen] = useState(false);
     const handleUpdateTaskCompletion = async () => {
         try {
             await axios.put(API_URL, {
@@ -41,11 +41,11 @@ export const Task = ({task, fetchTasks}) => {
             <Typography variant="h4">{name}</Typography>
         </div>
         <div className="taskButtons">
-            <Button variant="contained" onClick={() => setisDialogueOpen(true)}> <EditCircleIcon/> </Button>
+            <Button variant="contained" onClick={() => setisDialogOpen(true)}> <EditCircleIcon/> </Button>
             <Button color="error" variant="contained" onClick={handleDeleteTask}> <DeleteCircleIcon/> </Button>
         </div>
         
-        <UpdateTaskForm fetchTasks={fetchTasks} isDialogueOpen={isDialogueOpen} setisDialogueOpen={setisDialogueOpen} task={task}/>
+        <UpdateTaskForm fetchTasks={fetchTasks} isDialogOpen={isDialogOpen} setisDialogOpen={setisDialogOpen} task={task}/>
     </div>
 
   )
