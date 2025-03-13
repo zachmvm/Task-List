@@ -5,7 +5,7 @@ import axios from "axios";
 import { API_URL } from '../utils';
 
 
-export const UpdateTaskForm = ({fetchTasks, isDialogueOpen, setIsDialogueOpen, task}) => {
+export const UpdateTaskForm = ({fetchTasks, isDialogOpen, setIsDialogOpen, task}) => {
     const {id, completed} = task;
     const [taskName, setTaskName] = useState("");
     const handleUpdateTaskName = async () => {
@@ -24,14 +24,14 @@ export const UpdateTaskForm = ({fetchTasks, isDialogueOpen, setIsDialogueOpen, t
     }
 
     return (
-    <Dialog open={isDialogueOpen}>
+    <Dialog open={isDialogOpen}>
         <div className="dialog">
             <TextField size="small" label="Task" variant="outlined" onChange={(e) => setTaskName(e.target.value)}>
 
             </TextField>
             <Button variant="contained" onClick={async () => {
                 await handleUpdateTaskName();
-                setIsDialogueOpen(false);
+                setIsDialogOpen(false);
             }}>
                 <CheckCircleIcon/>
             </Button>
