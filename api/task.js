@@ -43,7 +43,7 @@ export const updateTasks = async ({id, name, completed}) => {
         UpdateExpression: "set #name = :n, completed = :c",
         ExpressionAttributeValues: {
             ":n": name,
-            ":c": completed
+            ":c": completed,
         },
         ReturnValues: "ALL_NEW"
     })
@@ -55,7 +55,7 @@ export const deleteTasks = async (id) => {
     const command = new DeleteCommand({
         TableName: "Tasks",
         Key: {
-            id
+            id,
         }
     })
     const response = await docClient.send(command);
